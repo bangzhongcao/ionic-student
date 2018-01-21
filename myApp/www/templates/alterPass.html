@@ -1,0 +1,25 @@
+<div class="alterPass p-f">
+	<div class="shadow_tip p-a" ng-show='isTip'>
+		<div class='mess_tip'  ng-bind='tips'></div>
+	</div>
+	<div class="back d-ib" ui-sref='forget' nav-direction='back'>
+		<i class="icon ion-chevron-left"></i>
+		<span class='backbtn'>返回</span>
+	</div>
+	<div class="alter-pass">
+		<p class="alter-title ta-c">修改密码</p>
+		<div class="new-pass p-r">
+			<i class="icon ion-ios-person p-a"></i>
+			<input type="number" ng-model='userId' ng-change='IsPassRight()' placeholder='请输入学号'>
+		</div>
+		<div class="new-pass p-r">
+			<i class="icon ion-locked p-a"></i>
+			<input type="password" ng-model='new_pass' ng-change='IsPassRight()' placeholder='请输入新密码'>
+		</div>
+		<div class="new-pass p-r">
+			<i class="icon ion-locked p-a"></i>
+			<input type="password" ng-model='sec_pass' ng-change='IsPassRight()' placeholder='请再次输入新密码'>
+		</div>
+		<button class='confirmbtn out-l-n' ng-class="isDisabled?'':'disabled_btn'" ng-click='submitAlterPass()'>确定</button>
+	</div>
+</div>

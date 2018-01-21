@@ -1,0 +1,28 @@
+<div class="login p-f">
+	<form name='form'>
+		<div class="logo ta-c">
+			<div class="logo_wrap">
+				<img src="image/logo.png" alt="">
+				<p>我的微思政</p>
+			</div>
+		</div>
+		<div class="input_wrap">
+			<div class="account p-r b-box">
+				<span class='icon_account p-a'></span>
+				<input name='phone' type="text" ng-model='user.phone' validator="required,phone" class='b-box out-l-n' placeholder='请输入手机号'>
+			</div>
+			<div class="pass p-r b-box">
+				<span class='icon_pass p-a'></span>
+				<input name='password' type="password" ng-model='user.pass' validator="required,password" class='b-box out-l-n' placeholder='设置6位以上的密码'>
+			</div>
+			<div class="message p-r">
+				<input name='required' type="text" class='out-l-n' ng-model='user.code' validator="required" placeholder='输入手机验证码'>
+				<button class='get_code p-a out-l-n' ng-click='send()' ng-bind='time?time:"点击获取验证码"'></button>
+			</div>
+		</div>
+		<div class="btn_group">
+			<button class='registerbtn out-l-n' validation-submit="form" ng-click="submit()">注册</button>
+			<button class='loginbtn out-l-n' ui-sref='login'>返回登录</button>
+		</div>
+	</form>
+</div>

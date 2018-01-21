@@ -1,0 +1,22 @@
+<div class="forget p-f">
+	<div class="shadow_tip p-a" ng-show='isTip'>
+		<div class='mess_tip'  ng-bind='tips'></div>
+	</div>
+	<div class="back d-ib" ui-sref='login' nav-direction='back'>
+		<i class="icon ion-chevron-left"></i>
+		<span class='backbtn'>返回</span>
+	</div>
+	<div class="identify-mail">
+		<p class="mail-title ta-c">验证邮箱</p>
+		<div class="mail-addr p-r">
+			<i class="icon ion-ios-email-outline p-a"></i>
+			<input type="email" ng-model='mail_addr' ng-change='IsInfoRight()' placeholder='请输入邮箱'>
+		</div>
+		<div class="message p-r">
+			<i class="icon ion-lock-combination p-a"></i>
+			<input type="text" ng-model='mail_code' ng-change='IsInfoRight()' placeholder='请输入验证码'>
+			<button class='get_code p-a' ng-class="isCode?'disable_code':''" ng-disabled='isCode' ng-click='getCode()' ng-bind='time?time:"获取验证码"'></button>
+		</div>
+		<button class='nextbtn out-l-n' ng-class="isDisabled?'':'disabled_btn'" ng-click='submitMail()'>下一步</button>
+	</div>
+</div>

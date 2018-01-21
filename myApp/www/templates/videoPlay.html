@@ -1,0 +1,26 @@
+<div class="videoPlay p-r" ng-click='showToolbar()'>
+	<video class='player' src="2016.mp4" preload='meta'></video>
+	<div class="pauseImg p-a" ng-show='isPause' ng-click='play_paused()'>
+		<img src="image/playBig.png" alt="">
+	</div>
+	<div class="topBar p-f b-box" ng-show='isShow'>
+		<div class="p-a back_img ta-c">
+			<img src="image/back.png" alt="" ng-click='back()'>
+		</div>
+		<span>2016互联网大会习近平开幕式致辞</span>
+	</div>
+	<div class="controls p-a" ng-show='isShow'>
+		<div class="play_paused f-l ta-c" ng-click='play_paused()'>
+			<img class='va-m' ng-src="{{isPlay}}" alt="">
+		</div>
+		<div class="current_time f-l ta-l" ng-bind='currentTime'></div>
+		<div class="progress f-l">
+			<div class="bar p-r">
+				<div class="loaded p-a"></div>
+				<div class="line p-a"></div>
+				<div class="circle p-a"></div>
+			</div>
+		</div>
+		<div class="total ta-l f-l" ng-bind='totalTime'></div>
+	</div>
+</div>

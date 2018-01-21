@@ -1,0 +1,14 @@
+<div class="newsList" nav-direction="forward">
+	<div class='list_title'>
+		<div class="mark f-l"></div>
+		<div class="title_name f-l" ng-bind='titleName'></div>
+		<div class="more f-r" ui-sref='news' ng-bind='more'></div>
+	</div>
+	<ul class="news_ul l-s-n">
+		<li ng-repeat='item in list' ui-sref='newsInfo({id:{{item.id}}})'>
+			<img class='f-r' ng-src="{{item.img}}" alt="">
+			<h3 class="news_name" ng-bind='item.name'>spark</h3>
+			<p class='news_time' ng-bind='item.time'></p>
+		</li>
+	</ul>
+</div>

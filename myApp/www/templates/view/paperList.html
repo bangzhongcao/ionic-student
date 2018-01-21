@@ -1,0 +1,24 @@
+<div class="paperList" nav-direction="forward">
+	<div class='list_title'>
+		<div class="mark f-l"></div>
+		<div class="title_name f-l" ng-bind='titleName'></div>
+		<div class="more f-r" ui-sref='paper' ng-bind='more'></div>
+	</div>
+	<ul class="paper_ul l-s-n">
+		<li ng-repeat='item in list'>
+			<!-- ui-sref='paperInfo({id:{{item.id}}})' -->
+			<p class='paper_name_class'>
+				<span class='paper_class' ng-bind='item.pclass'></span>
+				<span class='paper_name' ng-bind='item.name'></span>
+			</p>
+			<p class="paper_author_time">
+				<span class='paper_author' ng-bind='item.author'></span>
+				<span class='paper_time' ng-bind='item.time'></span>
+			</p>
+			<p class="paper_keyword">
+				<span class="keywords_label">关键词:</span>
+				<span class="keywords" ng-bind='item.keyword'></span>
+			</p>
+		</li>
+	</ul>
+</div>

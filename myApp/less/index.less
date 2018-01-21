@@ -1,0 +1,151 @@
+@import 'template/headSearch.less';
+@import 'template/carousel.less';
+@import 'template/module.less';
+@import 'template/courseList.less';
+@import 'template/newsList.less';
+@import 'template/videoList.less';
+@import 'template/paperList.less';
+@import 'template/foot.less';
+@import 'template/listHead.less';
+@import 'self.less';
+@import 'login.less';
+@import 'courseInfo.less';
+@import 'videoPlay.less';
+@import 'property.less';
+@import 'variable.less';
+@import 'chat.less';
+@import 'forget-pass.less';
+@import 'alterPass.less';
+@import 'exercise.less';
+
+.ng-enter{
+  transition:0.5s linear all;
+  opacity: 0;
+}
+.ng-enter-active{
+  opacity: 1;
+}
+
+.fs(@px) {
+	// 初始时设置HTML字体大小为37.5px
+  font-size: unit(@px / 37.5, rem);
+}
+
+.w(@px) {
+	width: unit(@px / 37.5, rem);
+}
+
+.h(@px) {
+	height: unit(@px / 37.5, rem);
+}
+
+.lh(@px) {
+	line-height: unit(@px / 37.5, rem);
+}
+.mt(@px){
+	margin-top: unit(@px / 37.5, rem);
+}
+.ml(@px) {
+  	margin-left: unit(@px / 37.5, rem);
+}
+.mr(@px) {
+  	margin-right: unit(@px / 37.5, rem);
+}
+.mb(@px) {
+  	margin-bottom: unit(@px / 37.5, rem);
+}
+.pt(@px) {
+  	padding-top: unit(@px / 37.5, rem);
+}
+.pl(@px) {
+  	padding-left: unit(@px / 37.5, rem);
+}
+.pr(@px) {
+  	padding-right: unit(@px / 37.5, rem);
+}
+.pb(@px) {
+  	padding-bottom: unit(@px / 37.5, rem);
+}
+.t(@px) {
+  	top: unit(@px / 37.5, rem);
+}
+.l(@px) {
+  	left: unit(@px / 37.5, rem);
+}
+.b(@px) {
+  	bottom: unit(@px / 37.5, rem);
+}
+.r(@px) {
+  	right: unit(@px / 37.5, rem);
+}
+.br(@px){
+  border-radius: unit(@px / 37.5, rem);
+}
+// *{
+//   padding: 0;
+//   margin: 0;
+// }
+html,body{
+	height:100%;
+	width:100%;
+	margin: 0;
+  font-size:37.5px;
+}
+body{
+	background-color: @bodyBgColor;
+	.fs(16);
+}
+.view{
+  .pb(40);
+}
+.panel{
+  width: 100%;
+  .h(160);
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+// 背景颜色
+.view-panel{
+  background-color:@bodyBgColor;
+}
+// 底部标签颜色
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active{
+  color:@headBgColor;
+}

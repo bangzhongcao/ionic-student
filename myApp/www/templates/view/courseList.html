@@ -1,0 +1,14 @@
+<div class="courseList" nav-direction="forward">
+	<div class='list_title'>
+		<div class="mark f-l"></div>
+		<div class="title_name f-l" ng-bind='titleName'></div>
+		<div class="more f-r" ui-sref='course' ng-bind='more'></div>
+	</div>
+	<ul class="course_ul l-s-n">
+		<li ng-repeat='item in list' ui-sref='courseInfo({id:{{item.id}}})'>
+			<img class='f-l' ng-src="{{item.img}}" alt="">
+			<h3 class="course_name" ng-bind='item.name'>spark</h3>
+			<p class='course_intro' ng-bind='item.intro'></p>
+		</li>
+	</ul>
+</div>

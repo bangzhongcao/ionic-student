@@ -1,0 +1,22 @@
+<ion-view view-title="Account" class='view-panel'>
+  <!-- <ion-content> -->
+    <div class="self">
+		<div class="head_pic">
+			<div class="self_pic">
+				<img ng-src="{{selfImage?selfImage:defaultImg}}" alt="">
+			</div>
+			<p class='ta-c' ng-bind='selfName?selfName:"游客"'></p>
+		</div>
+		<div class="my_list">
+			<ul class='l-s-n'>
+				<li class='mycollection' ui-sref='collection'>
+					<img src="img/like.png" alt="" class='va-m'>
+					<span class='va-m'>我的收藏</span>
+					<span class='f-r'>></span>
+				</li>
+			</ul>
+		</div>
+		<div class="logoff ta-c" ng-bind='selfName?"退出登录":"去登录"' ng-click='selfName?logout():login()' ui-sref='login' nav-direction="forward"></div>
+	</div>
+  <!-- </ion-content> -->
+</ion-view>

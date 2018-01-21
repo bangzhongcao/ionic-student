@@ -1,0 +1,6 @@
+{
+	"host":"localhost",
+	"database":"big_data",
+	"user":"root",
+	"password":"123456"
+}

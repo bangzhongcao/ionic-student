@@ -1,0 +1,106 @@
+.forget{
+	width: 100%;
+	height: 100%;
+	min-height: 667px;
+	.shadow_tip{
+		top: 0;
+		left: 0;
+		height:100%;
+		width: 100%;
+		background-color: transparent;
+		display: flex;
+		justify-content:center;
+		align-items:center;
+		z-index: 100;
+		.mess_tip{
+			.pt(16);
+			.pl(25);
+			.pb(16);
+			.pr(25);
+			.br(6);
+			.lh(20);	
+			.fs(16);
+			color:@lineColor;
+			z-index: 101;
+			background-color: rgba(0, 0, 0, 0.9);
+		}
+	}
+	.back{
+		.mt(20);
+		.pl(10);
+		.h(30);
+		.lh(30);
+		color:@headBgColor;
+		i{
+			.mt(4);
+		}
+		.backbtn{
+			.fs(14);
+		}
+	}
+	.identify-mail{
+		.pl(8);
+		.pr(8);
+		.mail-title{
+			.fs(16);
+			.lh(25);
+			font-weight: 700;
+		}
+		.mail-addr{
+			.pl(40);
+			.lh(35);
+			.fs(14);
+			color:#a0a0a0;
+			border-bottom: 1px solid #d0d0d0;
+			i{
+				.fs(25);
+				.l(10);
+				.t(0);
+			}
+			input{
+				color:#808080;
+			}
+		}
+		.message{
+			.mt(8);
+			.pl(40);
+			.pr(90);
+			.lh(35);
+			.fs(14);
+			color:#a0a0a0;
+			border-bottom: 1px solid #d0d0d0;
+			i{
+				.fs(20);
+				.l(10);
+				.t(0);
+			}
+			input{
+				width: 100%;
+				color:#808080;
+			}
+			.get_code{
+				.t(3);
+				.r(4);
+				background-color: #fff;
+				border:0;
+				color:@headBgColor;
+			}
+			.disable_code{
+				// background-color: rgba(212,63,58, 0.6);
+				color:rgba(212,63,58, 0.6)
+			}
+		}
+		.nextbtn{
+			width: 100%;
+			.lh(30);
+			.mt(20);
+			border-radius: 4px;
+			border:1px solid @headBgColor;
+			background-color: rgba(212,63,58, 0.2);
+			color:@headBgColor;
+		}
+		.disabled_btn{
+			color:rgba(255, 255, 255, 0.8);
+		}
+	}
+}

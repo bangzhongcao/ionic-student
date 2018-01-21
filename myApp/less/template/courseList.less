@@ -1,0 +1,48 @@
+.courseList{
+	margin-top: 5px;
+	background-color: @defaultColor;
+	padding: 6px;
+	.list_title{
+		.lh(20);
+		.h(20);
+		.mark{
+			.h(20);
+			.w(4);
+			background-color: @markcourseColor;
+		}
+		.title_name{
+			.ml(8);
+			.fs(14);
+		}
+		.more{
+			.fs(12);
+			.mr(5);
+		}
+	}
+	.course_ul{
+		li{
+			.pt(10);
+			.h(80);
+			img{
+				.mr(15);
+				.w(100);
+				.h(70);
+			}
+			.course_name{
+				.fs(15);
+				.lh(25);
+				.pt(8);
+			}
+			.course_intro{
+				.fs(12);
+				.lh(20);
+				color:@introColor;
+				overflow: hidden;
+				display: -webkit-box;
+			    -webkit-line-clamp: 2;
+			    -webkit-box-orient: vertical;
+			    word-break: break-all;
+			}
+		}
+	}
+}

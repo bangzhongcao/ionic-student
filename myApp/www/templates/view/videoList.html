@@ -1,0 +1,16 @@
+<div class="videoList" nav-direction="forward">
+	<div class='list_title'>
+		<div class="mark f-l"></div>
+		<div class="title_name f-l" ng-bind='titleName'></div>
+		<div class="more f-r" ui-sref='video' ng-bind='more'></div>
+	</div>
+	<ul class="video_ul l-s-n">
+		<li class='d-ib va-t' ng-repeat='item in list' ui-sref='videoInfo({id:{{item.id}}})'>
+			<div class="p-r">
+				<img ng-src="{{item.img}}" alt="">
+				<label class="episodes p-a" ng-bind='item.episodes'></label>
+			</div>
+			<p class='video_name ta-c' ng-bind='item.name'></p>
+		</li>
+	</ul>
+</div>

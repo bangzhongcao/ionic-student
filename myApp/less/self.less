@@ -1,0 +1,54 @@
+.self{
+	.head_pic{
+		background-color: @headBgColor;
+		border: 1px solid @headBgColor;
+		.h(180);
+		.self_pic{
+			.w(80);
+			.h(80);
+			overflow: hidden;
+			border-radius: 50px;
+			background-color: #fff;
+			margin: 35px auto;
+			img{
+				.w(80);
+				.h(80);
+			}
+		}
+		p{
+			color:@defaultColor;
+			.fs(16);
+			.mt(-20);
+		}
+	}
+	.my_list{
+		.mt(12);
+		.lh(45);
+		background-color: @defaultColor;
+		ul{
+			li{
+				.h(45);
+				padding: 0 15px;
+				img{
+					.w(20);
+				}
+				span{
+					.fs(15);
+					color:@fontColor;
+				}
+				&:first-child{
+					border-bottom: 1px solid @lineColor;
+				}
+				&:last-child{
+					border-bottom: 0;
+				}
+			}
+		}
+	}
+	.logoff{
+		.mt(12);
+		.lh(45);
+		color:@logOffColor;
+		background-color: @defaultColor;
+	}
+}

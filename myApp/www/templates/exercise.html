@@ -1,0 +1,32 @@
+<div class="exercise">
+	<div class="exercise-head o-h">
+		<span class='icon ion-chevron-left f-l back-btn' ng-click='back()' nav-direction="back"></span>
+		<div class='f-r exer-time'>
+			<span class='icon ion-clock'></span>
+			<span ng-bind='time'></span>
+		</div>
+	</div>
+	<div class="exercise-title">
+		<span class="titles f-l" ng-bind='exerName'></span>
+		<div class="exer-process f-r">
+			<span class='finish' ng-bind='currentIndex'></span>
+			<span>/</span>
+			<span class='unfinsh' ng-bind='exerTotal'></span>
+		</div>
+	</div>
+	<div class="exercise-content">
+		<div class='exer-title'>
+			<span class='exerType' ng-bind="'('+exerType+')'"></span>
+			<span ng-bind='exerTitle'></span>
+		</div>
+		<div class="list">
+	        <ion-radio ng-repeat="(index,item) in exerOptions" ng-click='changeChoice(index)' ng-value="index" ng-model="answer[currentIndex]">
+	          {{ item }}
+	        </ion-radio>
+	    </div>
+	</div>
+	<div class="btns p-f">
+    	<div class='d-ib ta-c' ng-click='pre()'><span class='icon ion-chevron-left pre'></span><span ng-bind="currentIndex===1?'无':'上一题'"></span></div>
+    	<div class='d-ib ta-c' ng-click='next()'><span ng-bind="currentIndex===exerTotal?'提交':'下一题'">下一题</span><span class='icon ion-chevron-right next'></span></div>
+    </div>
+</div>

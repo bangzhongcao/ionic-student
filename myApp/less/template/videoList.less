@@ -1,0 +1,51 @@
+.videoList{
+	margin-top: 5px;
+	background-color: @defaultColor;
+	padding: 6px;
+	.list_title{
+		.lh(20);
+		.h(20);
+		.mark{
+			.h(20);
+			.w(4);
+			background-color: @markvideoColor;
+		}
+		.title_name{
+			.ml(8);
+			.fs(14);
+		}
+		.more{
+			.fs(12);
+			.mr(5);
+		}
+	}
+	.video_ul{
+		width:100%;
+		li{
+			width:33.3333333%;
+			.pt(10);
+			.pl(6);
+			.pr(6);
+			// margin: 0 5px;
+			// .h(85);
+			div{
+				img{
+				width:100%;
+				.h(160);
+				}
+				.episodes{
+					.b(5);
+					.l(5);
+					.fs(14);
+					color:@defaultColor;
+				}
+			}
+			.video_name{
+				.fs(12);
+				.lh(20);
+				.w(100);
+				color:@introColor;
+			}
+		}
+	}
+}

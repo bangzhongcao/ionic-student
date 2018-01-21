@@ -1,0 +1,42 @@
+<ion-view>
+	<ion-content>
+		<div class="courseInfo">
+			<div class="coursehead p-r">
+				<div class="p-a back_img ta-c" ng-click='back()' nav-direction="back">
+					<span class='ion-arrow-return-left'></span>
+				</div>
+				<p class='courseName p-a'>动画技术</p>
+			</div>
+			<div class="course_intro">
+				简介：动画技术带你了解动画引擎的原理，掌握开发动画引擎的技术
+			</div>
+			<div class="outline">
+				<p class='outline_title'>课程内容</p>
+				<div class="course_content">
+					<p class='tests o-h' ui-sref="exercise({exerName:'第一节课后测试'})">
+						<strong class='f-l test-title'>第一节课后测试</strong>
+						<span class='f-r test-status-success'>已完成</span>
+					</p>
+					<p class='tests o-h' ui-sref="exercise({exerName:'第二节课后测试'})">
+						<strong class='f-l test-title'>第二节课后测试</strong>
+						<span class='f-r test-status-success'>已完成</span>
+					</p>
+					<p class='tests o-h' ui-sref="exercise({exerName:'第三节课后测试'})">
+						<strong class='f-l test-title'>第三节课后测试</strong>
+						<span class='f-r test-status-error'>未完成</span>
+					</p>
+					<p class='tests o-h' ui-sref="exercise({exerName:'第四节课后测试'})">
+						<strong class='f-l test-title'>第四节课后测试</strong>
+						<span class='f-r test-status-error'>未完成</span>
+					</p>
+				</div>
+				<!-- <div class='outline_content' ng-repeat='item in outlinelist'>
+					<p class='chapter' ng-bind='item.title'></p>
+					<div class="content_video" ng-repeat='obj in item.content'>
+						<p class="video_title" ng-bind='obj.name' ng-click='selfName?learn():login()'></p>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</ion-content>
+</ion-view>>

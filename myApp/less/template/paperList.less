@@ -1,0 +1,60 @@
+.paperList{
+	margin-top: 5px;
+	background-color: @defaultColor;
+	padding: 6px;
+	.list_title{
+		.lh(20);
+		.h(20);
+		.mark{
+			.h(20);
+			.w(4);
+			background-color: @markpaperColor;
+		}
+		.title_name{
+			.ml(8);
+			.fs(14);
+		}
+		.more{
+			.fs(12);
+			.mr(5);
+		}
+	}
+	.paper_ul{
+		li{
+			.mt(10);
+			border-top: 1px solid @lineColor;
+			&:first-child{
+				border-top: 0;
+			}
+			.paper_name_class{
+				.h(40);
+				.lh(40);
+				.paper_class{
+					.fs(14);
+					color:@papernameColor;
+				}
+				.paper_name{
+					.fs(14);
+					font-weight: 600;
+				}
+			}
+			.paper_author_time{
+				.lh(25);
+				.fs(12);
+				.paper_author{
+					color:@paperauthorColor;
+				}
+				.paper_time{
+					color:@introColor;
+				}
+			}
+			.paper_keyword{
+				.fs(12);
+				.lh(20);
+				.keywords_label{
+					color:@introColor;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+.foot{
+	width: 100%;
+	display: flex;
+	bottom:0;
+	.h(38);
+	border-top: 1px solid @lineColor;
+	background-color: @defaultColor;
+	div{
+		flex-grow:1;
+		.lh(38);
+		img{
+			.w(30);
+			margin-top: 6px;
+		}
+		&:last-child{
+			img{
+				.w(26);
+			}
+		}
+	}
+}
