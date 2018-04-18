@@ -65,6 +65,12 @@ angular.module('starter.directive', [])
 			titleName:'@',
 			list:'=',
 			more:'@'
+		},
+		controller:function($scope,$state,$http){
+			// 跳转到课程详情页
+			$scope.goCourseInfo = function(obj){
+				$state.go('courseInfo',{name:obj.courseName,teachName:obj.teacherName,id:obj.courseId});		
+			}
 		}
 	}
 }])

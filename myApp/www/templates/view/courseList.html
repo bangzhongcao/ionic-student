@@ -5,10 +5,13 @@
 		<div class="more f-r" ui-sref='course' ng-bind='more'></div>
 	</div>
 	<ul class="course_ul l-s-n">
-		<li ng-repeat='item in list' ui-sref='courseInfo({id:{{item.id}}})'>
+		<li ng-repeat='item in list' ng-click='goCourseInfo(item)'>
 			<img class='f-l' ng-src="{{item.img}}" alt="">
-			<h3 class="course_name" ng-bind='item.name'>spark</h3>
-			<p class='course_intro' ng-bind='item.intro'></p>
+			<h3 class="course_name">
+				<span ng-bind='item.name'></span>
+				<i ng-bind="'教师：'+item.teachName"></i>
+			</h3>
+			<p class='course_intro' ng-bind="'课程简介：'+item.intro"></p>
 		</li>
 	</ul>
 </div>

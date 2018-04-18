@@ -70,19 +70,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
             controller:'courseCtrl'
           })
           .state('courseInfo',{
-            url:'/courseInfo/:id',
+            url:'/courseInfo/:name/:teachName/:id',
             templateUrl:'templates/courseInfo.html',
             controller:'courseInfoCtrl'
-          })
-          .state('courseTest',{
-            url:'/courseTest',
-            templateUrl:'templates/view/courseTest.html',
-            controller:'courseTestCtrl'
-          })
-          .state('exercise',{
-            url:'/exercise/:exerName',
-            templateUrl:'templates/exercise.html',
-            controller:'exerciseCtrl'
           })
           .state('video',{
             url:'/video',
@@ -99,26 +89,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
             templateUrl:'templates/paper.html',
             controller:'paperCtrl'
           })
-          .state('tab.chats', {
-            url: '/chats',
+          .state('tab.tests', {
+            url: '/tests',
             cache:'false', 
             views: {
-              'tab-chats': {
-                templateUrl: 'templates/tab-chats.html',
-                controller: 'ChatsCtrl'
+              'tab-tests': {
+                templateUrl: 'templates/tab-tests.html',
+                controller: 'TestsCtrl'
               }
             }
           })
-          .state('tab.chat-detail', {
-            url: '/chats/:chatId',
-            views: {
-              'tab-chats': {
-                templateUrl: 'templates/chat-detail.html',
-                controller: 'ChatDetailCtrl'
-              }
-            }
+          .state('exercise',{
+            url:'/exercise/:exerName/:exerStatus/:exerId',
+            templateUrl:'templates/exercise.html',
+            controller:'exerciseCtrl'
           })
-
           .state('tab.account', {
             url: '/account',
             cache:'false', 
@@ -131,5 +116,73 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
           });
 
       // if none of the above states are matched, use this as the fallback
-      $urlRouterProvider.otherwise('/login');
-    });
+      // $urlRouterProvider.otherwise('/login');
+    })
+
+    //ionic点击系统返回键退出APP  
+    //  $cordovaKeyboard,
+    .run(function ($rootScope, $ionicPlatform, $state, $ionicHistory, $ionicPopup, $timeout) {
+      // var ips = 'http://192.168.23.1:7000';
+      var ips = 'http://127.0.0.1:7000';
+      if(sessionStorage.getItem('userId')){
+        window.location.href= ips+"/#/tab/dash";//登录
+      }else{
+        window.location.href= ips+"/#/login";//未登录
+      }
+      
+      window.addEventListener('native.keyboardhide', function (e) {  
+        cordova.plugins.Keyboard.isVisible = true;  
+        $timeout(function () {  
+          cordova.plugins.Keyboard.isVisible = false;  
+        }, 100);  
+      
+      });  
+      $ionicPlatform.registerBackButtonAction(function (e) {  
+        //阻止默认的行为  
+        e.preventDefault();  
+        // 退出提示框  
+        function showConfirm() {  
+          var servicePopup = $ionicPopup.show({  
+            title: '提示',  
+            subTitle: '你确定要退出应用吗？',  
+            scope: $rootScope,  
+            buttons: [  
+              {  
+                text: '取消',  
+                type: 'button-clear button-calm',  
+                onTap: function () {  
+                  return 'cancel';  
+                }  
+              },  
+              {  
+                text: '确认',  
+                type: 'button-clear button-calm border-left',  
+                onTap: function (e) {  
+                  return 'active';  
+                }  
+              }  
+            ]  
+          });  
+          servicePopup.then(function (res) {  
+            if (res == 'active') {  
+              // 退出app  
+              ionic.Platform.exitApp();  
+            }  
+          });  
+        }  
+        // 判断当前路由是否为各个导航栏的首页，是的话则显示提示框  
+        var current_state_name = $state.current.name; 
+        debugger 
+        // if ($cordovaKeyboard.isVisible()) {  
+        //   $cordovaKeyboard.close();  
+        // } else {  
+          if (current_state_name == 'login' || current_state_name == 'tab.dash' || current_state_name == 'tab.chats' || current_state_name == 'tab.account') {  
+            showConfirm();  
+          } else if ($ionicHistory.backView()) {  
+            $ionicHistory.goBack();  
+          } else {  
+            showConfirm();  
+          }  
+        // }  
+      }, 402); //101优先级常用于覆盖‘返回上一个页面’的默认行为  
+    })  

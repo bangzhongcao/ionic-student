@@ -1,7 +1,7 @@
 <div class="exercise">
 	<div class="exercise-head o-h">
-		<span class='icon ion-chevron-left f-l back-btn' ng-click='back()' nav-direction="back"></span>
-		<div class='f-r exer-time'>
+		<span ng-if='isTest' class='icon ion-chevron-left f-l back-btn' ng-click='back()' nav-direction="back"></span>
+		<div class='f-r exer-time' ng-if='!isTest'>
 			<span class='icon ion-clock'></span>
 			<span ng-bind='time'></span>
 		</div>
@@ -19,14 +19,68 @@
 			<span class='exerType' ng-bind="'('+exerType+')'"></span>
 			<span ng-bind='exerTitle'></span>
 		</div>
-		<div class="list">
-	        <ion-radio ng-repeat="(index,item) in exerOptions" ng-click='changeChoice(index)' ng-value="index" ng-model="answer[currentIndex]">
-	          {{ item }}
-	        </ion-radio>
+		<div class="list" ng-if='isRadio'>
+			<label class="item item-radio" ng-repeat="(index,item) in exerOptions" ng-click='changeChoice(index+1)'>
+				<input type="radio" name="group" ng-value="index+1" ng-model='answer[currentIndex]' ng-disabled='isTest'>
+				<div class="radio-content">
+					<div class="item-content">{{item}}</div>
+					<i class="radio-icon ion-checkmark"></i>
+				</div>
+			</label>
 	    </div>
+	    <ul class='list' ng-if='!isRadio'>
+	    	<li class="item item-checkbox" ng-repeat="(index,item) in exerOptions" ng-click='changeCheckChoice(index+1)'>
+				<label class="checkbox">
+					<input type="checkbox" ng-checked="answer[currentIndex][index]" ng-disabled='isTest'>
+				</label>
+           		{{item}}
+        	</li>
+	    </ul>
+	    <p class='correct' ng-if='isTest'>
+	    	<strong>正确答案：</strong><span class='rightAnswer' ng-bind='correctAnswer[currentIndex]'></span>
+	    	<strong>你的答案：</strong><span class='yourAnswer' ng-bind='yourAnswer[currentIndex]'></span>
+	    </p>
 	</div>
 	<div class="btns p-f">
     	<div class='d-ib ta-c' ng-click='pre()'><span class='icon ion-chevron-left pre'></span><span ng-bind="currentIndex===1?'无':'上一题'"></span></div>
     	<div class='d-ib ta-c' ng-click='next()'><span ng-bind="currentIndex===exerTotal?'提交':'下一题'">下一题</span><span class='icon ion-chevron-right next'></span></div>
+    </div>
+    <div class="answer-sheet p-f" ng-if='isSheet'>
+    	<div class="exercise-head o-h">
+			<span class='f-l back-btn' ng-click='cancelSheet()'>取消</span>
+			<div class='f-r exer-time'>
+				<span class='icon ion-clock'></span>
+				<span ng-bind='time'></span>
+			</div>
+		</div>
+		<div class="exercise-title">
+			<span class="titles f-l">答题卡</span>
+		</div>
+		<div class='answer-panel'>
+			<div class='ques-item f-l ta-c' ng-repeat="(index,item) in question">
+				<div class="ques-number" ng-class="{'unfinish':!isSelected[index+1]}" ng-click='turnQues(index+1)'>{{index+1}}</div>
+			</div>
+		</div>
+		<div class="btns p-f">
+	    	<div class='ta-c' ng-click='submitAnswer()' style="width: 100%"><span>提交并查看结果</span></div>
+	    </div>
+    </div>
+    <!-- 结果栏 -->
+    <div class="answer-sheet p-f grade" ng-if='isResult'>
+    	<div class="exercise-head o-h">
+			<span class='f-l back-btn' ng-click='cancelSheet()'>取消</span>
+		</div>
+		<div class="exercise-title">
+			<span class="titles f-l">{{exerName}} 测试结果</span>
+			<span class='titles f-r'>成绩：80分</span>
+		</div>
+		<div class='answer-panel'>
+			<div class='ques-item f-l ta-c' ng-repeat="(index,item) in question">
+				<div class="ques-number success" ng-class="{'error':!trueArr[index]}" ng-click='turnQues(index+1)'>{{index+1}}</div>
+			</div>
+		</div>
+		<div class="btns p-f">
+	    	<div class='ta-c' ng-click='turnQues(1)' style="width: 100%"><span>答案解析</span></div>
+	    </div>
     </div>
 </div>

@@ -13,8 +13,15 @@ var sendMail = require('./mail.js');
 var app = express();
 // var router = express.Router();
 
-var appData = require('./data.json');
+var appData = require('./mock/data.json');
 var students = appData.students;
+
+var courseListData = require('./mock/courseList.json');
+var TestListData = require('./mock/courseTestList.json');
+var completedData = require('./mock/completed.json');
+var uncompleteData = require('./mock/uncomplete.json');
+
+const ips = '10.2.212.42:7000';
 
 app.use(bodyParser.urlencoded({ extended: false }));//extended为false表示使用querystring来解析数据，这是URL-encoded解析器  
 app.use(bodyParser.json());
@@ -47,14 +54,14 @@ exports = module.exports = function(path){
 	app.post('/get_verification',function(req,res){
 		var mailAddr = req.body.mail;
 		console.log(mailAddr);
-		var title = "【微思政】邮箱验证码";
+		var title = "【大数据资源网】邮箱验证码";
 		//随机生成验证码
 		var Num=""; 
 		for(var i=0;i<6;i++) 
 		{ 
 			Num+=Math.floor(Math.random()*10); 
 		} 
-		var content = '亲爱的微思政用户，您的邮箱验证码是('+Num+'),千万不要告诉别人哦~';
+		var content = '亲爱的大数据资源网用户，您的验证码是('+Num+'),千万不要告诉别人哦~';
 
 		// 拼接 2373498353@qq.com
 		var mailOptions = {
@@ -80,6 +87,27 @@ exports = module.exports = function(path){
 		});
 	});
 
+	//课程列表
+	app.get('/getCourseList',function(req,res){
+		res.json({body:courseListData});
+	});
+	//测试列表
+	app.get('/getTestList',function(req,res){
+		res.json({body:TestListData});
+	});
+	//未完成的试题
+	app.get('/getTestInfo/uncomplete',function(req,res){
+		res.json({body:uncompleteData});
+	});
+	//已完成的试题
+	app.get('/getTestInfo/completed',function(req,res){
+		res.json({body:completedData});
+	});
+	//提交试题
+	app.post('/question_submit',function(req,res){
+		var returnData = { studentid: 1,testid: 1,answerIstrueArr: [ 0, 0, 1, 1 ],trueOptionArr: [ 4, 4, 4, 1 ]};
+		res.json({body:returnData});
+	});
 	//首页路由
 	//四大模块查询
 	// var modulelist = [];
@@ -185,6 +213,6 @@ exports = module.exports = function(path){
 	// 	res.send('hello world!');
 	// });
 
-	app.listen(8000);
+	app.listen(7000);
 	console.log('server start!');    
 }

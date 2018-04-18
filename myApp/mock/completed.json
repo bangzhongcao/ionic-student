@@ -1,0 +1,51 @@
+{
+    "question":[
+      {
+        "id" : 1,
+        "title" : "新窗口打开网页，用到以下哪个值（）",
+        "typeName" : "单选",
+        "options" :["_self","_blank","_top","_parent"],
+        "hasSelected":1,
+        "correctAnswer":2
+      },
+      {
+        "id" : 2,
+        "title" : "下面有关jquery事件的响应，描述错误的是？",
+        "typeName" : "单选",
+        "options" :[
+            "onclick 鼠标点击某对象",
+            "onfocus 元素失去焦点",
+            "onload 是某个页面的css js html 文档结构和图像被完全加载",
+            "onmousedown 某个鼠标按键被按下"
+         ],
+        "hasSelected":2,
+        "correctAnswer":2
+      },
+      {
+        "id" : 3,
+        "title" : "下列哪个样式定义后,内联(非块状)元素可以定义宽度和高度",
+        "typeName" : "单选",
+        "options" :[
+            "display:inline",
+            "display:none",
+            "display:block",
+            "display:inherit"
+         ],
+        "hasSelected":1,
+        "correctAnswer":3
+      },
+      {
+        "id" : 4,
+        "title" : "下述有关border:none以及border:0的区别，描述错误的是？",
+        "typeName" : "多选",
+        "options" :[
+            "border:none表示边框样式无",
+            "border:0表示边框宽度为0",
+            "当定义了border:none，即隐藏了边框的显示，实际就是边框宽度为0",
+            "当定义边框时，仅设置边框宽度也可以达到显示的效果"
+         ],
+        "hasSelected":[1,2],
+        "correctAnswer":[2,3]
+      }
+    ]
+  }

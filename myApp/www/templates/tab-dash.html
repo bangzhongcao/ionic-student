@@ -1,12 +1,12 @@
 <ion-view view-title="Dashboard">
-  <div app-head-search ng-hide='isHidden'></div>
-  <ion-content scroll='true' on-scroll='scroll()' delegate-handle="mainScroll" class='view-panel'>
+  <div app-head-search id='searchTab' ng-hide='isHidden'></div>
+  <ion-content  id='home-content' scroll='true' on-scroll='scroll()' delegate-handle="mainScroll" class='view-panel'>
     <ion-refresher pulling-text="下拉刷新..."></ion-refresher>
-    <div app-carousel list='imglist'></div>
+    <div app-carousel id='img-carousel' list='imglist'></div>
     <div app-module-list list='modulelist'></div>
-   <!--  <div app-course-list title-name='最新课程' list='courselist' more='更多>'></div>
+    <div app-course-list title-name='最新课程' list='courselist' more='更多>'></div>
     <div app-news-list title-name='最新新闻' list='newslist' more='更多>'></div>
     <div app-video-list title-name='最新纪录片' list='videolist' more='更多>'></div>
-    <div app-paper-list title-name='最新论文' list='paperlist' more='更多>'></div> -->
+    <div app-paper-list title-name='最新论文' list='paperlist' more='更多>'></div>
   </ion-content>
 </ion-view>

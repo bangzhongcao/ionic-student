@@ -1,0 +1,30 @@
+[
+	{
+		"name":"动画技术",
+		"img":"img/course1.png",
+		"id":1,
+		"teachName":"洪志国",
+		"intro":"本课程旨在让同学们了解Spark基础知识，掌握Spark基础开发。"
+	},
+	{
+		"name":"计算机网络与编程",
+		"img":"img/course2.png",
+		"id":2,
+		"teachName":"林卫国",
+		"intro":"本课程旨在让同学们了解Spark基础知识，掌握Spark基础开发。"
+	},
+	{
+		"name":"算法设计与分析",
+		"img":"img/course3.png",
+		"id":3,
+		"teachName":"曹建香",
+		"intro":"本课程旨在让同学们了解Spark基础知识，掌握Spark基础开发。"
+	},
+	{
+		"name":"计算机网络实验",
+		"img":"img/course4.png",
+		"id":4,
+		"teachName":"潘云",
+		"intro":"本课程旨在让同学们了解Spark基础知识，掌握Spark基础开发。"
+	}
+]

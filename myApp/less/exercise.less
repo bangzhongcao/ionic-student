@@ -6,6 +6,7 @@
 		.pr(10);
 	    background-color: rgba(0,0,0,0.6);
 		.back-btn{
+			.w(35);
 			color:#fff;
 		}
 		.exer-time{
@@ -31,9 +32,12 @@
 	.exercise-content{
 		.pt(25);
 		.pl(15);
+		.pb(120);
 		.pr(15);
 		.fs(15);
 		.lh(22);
+		height: 100%;
+		overflow: auto;
 		.exer-title{
 			.pb(18);
 			.exerType{
@@ -41,8 +45,20 @@
 				.mr(8);
 			}
 		}
-		.exer-option{
-			.lh(30);
+		.list{
+			.item-content{
+				white-space: normal;
+			}
+		}
+		.correct{
+			.mt(15);
+			.fs(15);
+			span{
+				color:#0aa770;
+				&.rightAnswer{
+					.mr(16);
+				}
+			}
 		}
 	}
 	.btns{
@@ -62,6 +78,46 @@
 			}
 			.next{
 				.ml(10);
+			}
+		}
+	}
+	.answer-sheet{
+		top:0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+		z-index: 1000;
+		.answer-panel{
+			.pt(25);
+			.pl(15);
+			.pr(15);
+			.fs(14);
+			.lh(32);
+			.ques-item{
+				width: 20%;
+				.mb(10);
+				.ques-number{
+					.w(32);
+					color:#000;
+					margin:0 auto;
+					border:1px solid #555;
+					border-radius: 50%;
+				}
+				.unfinish{
+					border-color: #ddd;
+					color:#ddd;
+				}
+				.success{
+					color:#fff;
+					border-color: #33cd5f;
+					background-color:#33cd5f;
+				}
+				.error{
+					color:#fff;
+					border-color: #ef473a;
+					background-color:#ef473a;
+				}
 			}
 		}
 	}
