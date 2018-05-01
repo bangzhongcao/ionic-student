@@ -291,14 +291,19 @@
   z-index: 100;
   height: 4.26666667rem;
 }
-.listhead .back_img {
+.listhead .headBtn {
   width: 0.8rem;
   height: 0.8rem;
   line-height: 0.8rem;
   top: 0.26666667rem;
-  left: 0.26666667rem;
   font-size: 0.64rem;
   color: #fff;
+}
+.listhead .backBtn {
+  left: 0.26666667rem;
+}
+.listhead .searchBtn {
+  right: 0.26666667rem;
 }
 .listhead .course_title {
   color: #fff;
@@ -1066,6 +1071,269 @@
   color: #fff;
   border-color: #ef473a;
   background-color: #ef473a;
+}
+.paperInfo .backBtn {
+  width: 0.8rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.64rem;
+}
+.paperInfo .paperPanel {
+  min-height: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 100px 10px 0 10px;
+  padding-bottom: 1.2rem;
+  margin-bottom: -1.2rem;
+  overflow: auto;
+}
+.paperInfo .paperPanel .paperTitle {
+  font-size: 0.58666667rem;
+  margin-top: 0.26666667rem;
+  margin-bottom: 0.4rem;
+  color: #808080;
+}
+.paperInfo .paperPanel .paperIntro {
+  text-indent: 2em;
+  line-height: 0.64rem;
+  font-size: 0.42666667rem;
+}
+.paperInfo .paperPanel .Papers {
+  margin-top: 0.26666667rem;
+  margin-bottom: 0.26666667rem;
+  line-height: 0.69333333rem;
+  word-break: break-all;
+}
+.paperInfo .paperPanel .Papers .titles {
+  font-size: 0.48rem;
+  font-weight: bold;
+}
+.paperInfo .paperPanel .Papers .info {
+  font-size: 0.42666667rem;
+}
+.paperInfo .paperPanel .paperRemark {
+  margin-bottom: 0.66666667rem;
+}
+.paperInfo .paperPanel .paperRemark .userName {
+  font-size: 0.48rem;
+  line-height: 0.8rem;
+  font-weight: bold;
+  color: #2d64b3;
+}
+.paperInfo .paperPanel .paperRemark .commentTime {
+  font-size: 0.37333333rem;
+  line-height: 0.48rem;
+  color: #c0c0c0;
+}
+.paperInfo .paperPanel .paperRemark .commentContent {
+  margin-top: 0.21333333rem;
+  font-size: 0.42666667rem;
+  line-height: 0.64rem;
+}
+.paperInfo .paperPanel .Read {
+  padding-top: 0.4rem;
+}
+.paperInfo .paperPanel .Read .readBtn {
+  height: 0.64rem;
+  line-height: 0.64rem;
+  font-size: 0.48rem;
+  padding-left: 0.42666667rem;
+  padding-right: 0.42666667rem;
+}
+.paperInfo .commented {
+  background-color: #fff;
+  width: 100%;
+  bottom: -0.02666667rem;
+  left: 0rem;
+  height: 1.2rem;
+  border-top: 1px solid #ccc;
+}
+.paperInfo .commented .commentBtn {
+  height: 1.2rem;
+  line-height: 1.2rem;
+  width: 1.86666667rem;
+  font-size: 0.42666667rem;
+}
+.paperInfo .footerInput {
+  background-color: #fff;
+}
+.paperInfo .footerInput .inputComment {
+  border-top: 1px solid #ccc;
+  height: 1.2rem;
+  font-size: 0rem;
+}
+.paperInfo .footerInput .inputComment .cancelBtn {
+  width: 8%;
+  margin-left: 0.21333333rem;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  font-size: 0.64rem;
+  color: #666;
+}
+.paperInfo .footerInput .inputComment .inputRemark {
+  width: 66%;
+  height: 1.2rem;
+  padding-top: 0.13333333rem;
+  padding-bottom: 0.13333333rem;
+}
+.paperInfo .footerInput .inputComment .inputRemark input {
+  width: 100%;
+  padding-left: 0.13333333rem;
+  padding-right: 0.13333333rem;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  border: 1px solid #a0a0a0;
+}
+.paperInfo .footerInput .inputComment .submitBtn {
+  width: 17%;
+  height: 0.8rem;
+  margin-left: 0.21333333rem;
+  border-radius: 3px;
+  background-color: #387ef5;
+  color: #fff;
+  line-height: 0.8rem;
+  font-size: 0.4rem;
+}
+.paperRead {
+  padding: 40px 0 0 0;
+}
+.paperRead .backBtn {
+  width: 0.8rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.64rem;
+}
+.paperRead .paperContent {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  margin: 0px;
+}
+.paperRead .paperContent canvas {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.newsRead .backBtn {
+  width: 0.8rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.64rem;
+}
+.newsRead .newsPanel {
+  min-height: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 100px 10px 0 10px;
+  padding-top: 1.46666667rem;
+  padding-bottom: 1.2rem;
+  margin-bottom: -1.2rem;
+  overflow: auto;
+}
+.newsRead .newsPanel .newsTitle {
+  font-size: 0.64rem;
+  margin-top: 0.26666667rem;
+  margin-bottom: 0.4rem;
+  color: #808080;
+  line-height: 0.96rem;
+}
+.newsRead .newsPanel .articleInfo {
+  font-size: 0.42666667rem;
+  line-height: 0.96rem;
+}
+.newsRead .newsPanel .articleInfo .newsOri {
+  margin-right: 0.4rem;
+}
+.newsRead .newsPanel .articleInfo .newsTime {
+  color: #a0a0a0;
+}
+.newsRead .newsPanel .newsContent {
+  text-indent: 2em;
+  line-height: 0.74666667rem;
+  font-size: 0.48rem;
+}
+.newsRead .newsPanel .newsContent img {
+  width: 100%;
+}
+.newsRead .newsPanel .commentTitle {
+  margin-top: 0.66666667rem;
+  font-size: 0.53333333rem;
+  font-weight: 700;
+  line-height: 0.8rem;
+}
+.newsRead .newsPanel .newsRemark {
+  margin-bottom: 0.4rem;
+}
+.newsRead .newsPanel .newsRemark .userName {
+  margin-top: 0.26666667rem;
+  font-size: 0.48rem;
+  line-height: 0.8rem;
+  font-weight: bold;
+  color: #2d64b3;
+}
+.newsRead .newsPanel .newsRemark .commentTime {
+  font-size: 0.37333333rem;
+  line-height: 0.48rem;
+  color: #c0c0c0;
+}
+.newsRead .newsPanel .newsRemark .commentContent {
+  margin-top: 0.08rem;
+  font-size: 0.42666667rem;
+  line-height: 0.64rem;
+}
+.newsRead .commented {
+  background-color: #fff;
+  width: 100%;
+  bottom: -0.02666667rem;
+  left: 0rem;
+  height: 1.2rem;
+  border-top: 1px solid #ccc;
+}
+.newsRead .commented .commentBtn {
+  height: 1.2rem;
+  line-height: 1.2rem;
+  width: 1.86666667rem;
+  font-size: 0.42666667rem;
+}
+.newsRead .footerInput {
+  background-color: #fff;
+}
+.newsRead .footerInput .inputComment {
+  border-top: 1px solid #ccc;
+  height: 1.2rem;
+  font-size: 0rem;
+}
+.newsRead .footerInput .inputComment .cancelBtn {
+  width: 8%;
+  margin-left: 0.21333333rem;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  font-size: 0.64rem;
+  color: #666;
+}
+.newsRead .footerInput .inputComment .inputRemark {
+  width: 66%;
+  height: 1.2rem;
+  padding-top: 0.13333333rem;
+  padding-bottom: 0.13333333rem;
+}
+.newsRead .footerInput .inputComment .inputRemark input {
+  width: 100%;
+  padding-left: 0.13333333rem;
+  padding-right: 0.13333333rem;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  border: 1px solid #a0a0a0;
+}
+.newsRead .footerInput .inputComment .submitBtn {
+  width: 17%;
+  height: 0.8rem;
+  margin-left: 0.21333333rem;
+  border-radius: 3px;
+  background-color: #387ef5;
+  color: #fff;
+  line-height: 0.8rem;
+  font-size: 0.4rem;
 }
 .ng-enter {
   transition: 0.5s linear all;

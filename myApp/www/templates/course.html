@@ -2,7 +2,10 @@
 	<div app-list-head backstyle='back_course_style' stitle='course_title'></div>
 	<ion-content>
 		<div class="panel"></div>
-		<div app-course-list title-name='课程列表' list='courselist'></div>
+		<div class='p-r'>
+			<ion-refresher pulling-text="下拉刷新..."></ion-refresher>
+			<div app-course-list title-name='课程列表' list='courselist'></div>
+		</div>
 	</ion-content>	
 </ion-view>
 

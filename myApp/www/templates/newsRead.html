@@ -1,0 +1,40 @@
+<div class='newsRead' nav-direction="back">
+	<ion-header-bar align-title="left" class='chat-header'>
+		<h1 class="backBtn ion-ios-undo f-l ta-c" ng-click='back()'></h1>
+	</ion-header-bar>
+	<div class='newsPanel p-r'>
+		<h4 class='newsTitle' ng-bind='newsInfo.name'></h4>
+		<p class='articleInfo'>
+			<i class='newsOri'>来源：{{newsInfo.Origin}}</i>
+			<span class='newsTime' ng-bind='newsInfo.time'></span>
+		</p>
+		<div class="newsContent" ng-bind-html='newsInfo.content'></div>
+		<p class='commentTitle'>评论</p>
+		<div class='newsRemark'>
+			<div ng-repeat="item in remark">
+				<p class='userName'>{{item.name}}</p>
+				<p class='commentTime' ng-bind='item.time'></p>
+				<p class='commentContent' ng-bind="item.content"></p>
+			</div>
+		</div>
+	</div>
+	<div ng-show="isComment==1" class="commented p-f">
+		<div class="commentBtn f-r" ng-click='isComment=2'>
+			<i class="icon ion-chatbox-working" style='margin-right:6px'></i>
+			<span>评论</span>
+		</div>
+	</div>
+	<footer class='footerInput' ng-show="isComment==2">
+		<div class="inputComment">
+			<div class="cancelBtn d-ib va-m"  ng-click='isComment=1'>
+				<i class='icon ion-chevron-left'></i>
+			</div>
+			<div class="inputRemark d-ib va-m">
+				<input ng-model='comment' type="text" placeholder='评论'>
+			</div>
+			<div class="submitBtn d-ib ta-c va-m" ng-click='submitComment()'>
+				提交
+			</div>
+		</div>
+	</footer>
+</div>

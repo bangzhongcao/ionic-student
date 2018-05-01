@@ -1,4 +1,10 @@
-<div app-list-head backstyle='back_news_style' stitle='news_title'></div>
-<div class="panel"></div>
-<div app-news-list title-name='新闻列表' list='newslist'></div>
-<div app-foot></div>
+<ion-view>
+	<div app-list-head backstyle='back_news_style' stitle='news_title'></div>
+	<ion-content>
+		<div class="panel"></div>
+		<div class='p-r'>
+			<ion-refresher pulling-text="下拉刷新..."></ion-refresher>
+			<div app-news-list title-name='新闻列表' list='newslist'></div>
+		</div>
+	</ion-content>	
+</ion-view>

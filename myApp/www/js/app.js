@@ -64,6 +64,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
               }
             }
           })
+          .state('search',{
+            url:'/search',
+            templateUrl:'templates/search.html',
+            controller:'searchCtrl'
+          })
           .state('course',{
             url:'/course',
             templateUrl:'templates/course.html',
@@ -84,10 +89,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
             templateUrl:'templates/news.html',
             controller:'newsCtrl'
           })
+          .state('newsRead',{
+            url:'/newsRead/:id',
+            templateUrl:'templates/newsRead.html',
+            controller:'newsReadCtrl'
+          })
           .state('paper',{
             url:'/paper',
             templateUrl:'templates/paper.html',
             controller:'paperCtrl'
+          })
+          .state('paperInfo',{
+            url:'/paperInfo/:id',
+            templateUrl:'templates/paperInfo.html',
+            controller:'paperInfoCtrl'
+          })
+          .state('paperRead',{
+            url:'/paperRead/:id',
+            templateUrl:'templates/paperRead.html',
+            controller:'paperReadCtrl'
           })
           .state('tab.tests', {
             url: '/tests',

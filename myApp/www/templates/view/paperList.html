@@ -5,8 +5,7 @@
 		<div class="more f-r" ui-sref='paper' ng-bind='more'></div>
 	</div>
 	<ul class="paper_ul l-s-n">
-		<li ng-repeat='item in list'>
-			<!-- ui-sref='paperInfo({id:{{item.id}}})' -->
+		<li ng-repeat='item in list' ui-sref='paperInfo({id:{{item.id}}})'>
 			<p class='paper_name_class'>
 				<span class='paper_class' ng-bind='item.pclass'></span>
 				<span class='paper_name' ng-bind='item.name'></span>

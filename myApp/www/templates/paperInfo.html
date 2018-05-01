@@ -1,0 +1,65 @@
+<div class='paperInfo' nav-direction="back">
+	<ion-header-bar align-title="left" class='chat-header'>
+		<h1 class="backBtn ion-ios-undo f-l ta-c" ng-click='back()'></h1>
+	</ion-header-bar>
+	<div class="tabs-top tabs-background-dark tabs-color-light">
+		<div class="tabs">
+			<div class="tab-item" ng-class="{'active':active==1,'':'active==2'}" ng-click='active=1'>论文详情</div>
+			<div class="tab-item" ng-class="{'active':active==2,'':'active==1'}" ng-click='active=2'>评论</div>
+		</div>
+	</div>
+	<div ng-show='active==1' class='paperPanel'>
+		<h4 class='paperTitle' ng-bind='paperInfo.name'></h4>
+		<p class='Papers'>
+			<span class='titles'>作者：</span>
+			<span class='info' ng-bind='paperInfo.author'></span>
+		</p>
+		<p class='Papers'>
+			<span class='titles'>作者单位：</span>
+			<span class='info' ng-bind='paperInfo.Organization'></span>
+		</p>
+		<p class='Papers'>
+			<span class='titles'>类型：</span>
+			<span class='info' ng-bind='paperInfo.pclass'></span>
+		</p>
+		<p class='Papers'>
+			<span class='titles'>出版时间：</span>
+			<span class='info' ng-bind='paperInfo.time'></span>
+		</p>
+		<p style='font-size:18px;font-weight:bold'>摘要：</p>
+		<div class='paperIntro' ng-bind-html='paperInfo.intro'></div>
+		<p class='Papers'>
+			<span class='titles'>关键词：</span>
+			<span class='info' ng-bind='paperInfo.keyword'></span>
+		</p>
+		<p class='Read ta-c' nav-direction="forward">
+			<button class="button button-assertive readBtn" ng-click='goRead()'>阅 读</button>
+		</p>
+	</div>
+	<div ng-show='active==2' class='paperPanel'>
+		<div class='paperRemark' ng-repeat="item in remark">
+			<p class='userName'>{{item.name}}</p>
+			<p class='commentTime' ng-bind='item.time'></p>
+			<p class='commentContent' ng-bind="item.content"></p>
+		</div>
+	</div>
+	<div ng-show="active==2&&isComment==1" class="commented p-f">
+		<div class="commentBtn f-r" ng-click='isComment=2'>
+			<i class="icon ion-chatbox-working" style='margin-right:6px'></i>
+			<span>评论</span>
+		</div>
+	</div>
+	<footer class='footerInput' ng-show="active==2&&isComment==2">
+		<div class="inputComment">
+			<div class="cancelBtn d-ib va-m"  ng-click='isComment=1'>
+				<i class='icon ion-chevron-left'></i>
+			</div>
+			<div class="inputRemark d-ib va-m">
+				<input ng-model='comment' type="text" placeholder='评论'>
+			</div>
+			<div class="submitBtn d-ib ta-c va-m" ng-click='submitComment()'>
+				提交
+			</div>
+		</div>
+	</footer>
+</div>

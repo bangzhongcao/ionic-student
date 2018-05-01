@@ -41,6 +41,9 @@ angular.module('starter.directive', [])
 			$scope.back = function(){
 				window.history.back();
 			}
+			$scope.search = function(){
+				console.log(111);
+			}
 		}
 	}
 }])
